@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shein Promo | Catálogo de Afiliado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #fafafa;
+        }
+
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pink-gradient {
+            background: linear-gradient(135deg, #ff4d8d 0%, #ff85b2 100%);
+        }
+
+        .image-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%);
+        }
+
+        /* Animación de carga */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Navegación -->
+    <nav class="sticky top-0 z-50 border-b border-slate-100 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 pink-gradient rounded-lg flex items-center justify-center text-white shadow-lg shadow-pink-200">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                </div>
+                <h1 class="text-xl font-extrabold tracking-tight">SHEIN<span class="text-pink-500">PROMO</span></h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-1 rounded">Dominicana</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="max-w-6xl mx-auto px-6 mt-8">
+        <div class="relative rounded-3xl bg-slate-900 p-8 md:p-16 overflow-hidden text-white">
+            <div class="relative z-10">
+                <span class="inline-block bg-pink-500/20 text-pink-400 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
+                    Catálogo de Afiliado
+                </span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Los mejores hallazgos,<br>directo a tu carrito.</h2>
+                <p class="text-slate-400 text-sm md:text-base max-w-md mb-8">
+                    Seleccionamos las prendas más virales y con mejores reseñas para que compres con seguridad.
+                </p>
+                <div class="flex gap-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-700"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-600"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-500"></div>
+                    </div>
+                    <p class="text-xs text-slate-400 self-center">Únete a +1k que compran inteligentemente</p>
+                </div>
+            </div>
+            <!-- Decoración -->
+            <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
+        </div>
+    </header>
+
+    <!-- Grid de Productos -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <div class="flex items-center justify-between mb-8">
+            <h3 class="text-lg font-bold flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-5 h-5 text-yellow-500"></i>
+                Tendencias Recientes
+            </h3>
+        </div>
+
+        <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Cargando... -->
+            <div class="col-span-full py-20 flex flex-col items-center justify-center">
+                <div class="w-10 h-10 border-4 border-pink-100 border-t-pink-500 rounded-full animate-spin mb-4"></div>
+                <p class="text-slate-400 text-sm font-medium">Sincronizando catálogo...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-100 bg-white py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-slate-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">EddyKLK • SheinPromo</p>
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="#" class="text-slate-400 hover:text-pink-500 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-blue-500 transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+            </div>
+            <p class="text-slate-300 text-[10px]">© 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // CONFIGURACIÓN: Cambia esto por tus datos
+        const GITHUB_USER = "eddyklk";
+        const GITHUB_REPO = "SheinPromo";
+        const BRANCH = "main";
+
+        // Función para obtener URL Raw de la imagen
+        const getImgUrl = (id) => `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/${id}.jpeg`;
+
+        // Lógica de ordenamiento: DD-MM-YYYY-N
+        function sortIds(ids) {
+            return ids.sort((a, b) => {
+                const partsA = a.split('-');
+                const partsB = b.split('-');
+                
+                // Formato para comparar: YYYYMMDD + N (con padding)
+                const scoreA = partsA[2] + partsA[1] + partsA[0] + partsA[3].padStart(4, '0');
+                const scoreB = partsB[2] + partsB[1] + partsB[0] + partsB[3].padStart(4, '0');
+
+                return scoreB.localeCompare(scoreA); // De más reciente a más antiguo
+            });
+        }
+
+        async function fetchCatalog() {
+            const grid = document.getElementById('catalog-grid');
+            
+            try {
+                // Buscamos el archivo db.json en la misma ubicación que el index.html
+                const res = await fetch('db.json');
+                if (!res.ok) throw new Error();
+                
+                const data = await res.json();
+                const ids = Object.keys(data);
+                const sorted = sortIds(ids);
+
+                grid.innerHTML = '';
+
+                sorted.forEach(id => {
+                    const item = data[id];
+                    const [d, m, y] = id.split('-');
+
+                    grid.innerHTML += `
+                        <div class="product-card bg-white rounded-3xl border border-slate-100 overflow-hidden flex flex-col h-full shadow-sm">
+                            <div class="relative aspect-[3/4] overflow-hidden bg-slate-100">
+                                <img src="${getImgUrl(id)}" 
+                                     alt="${item.title}" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.src='https://via.placeholder.com/600x800?text=No+Encontrada'">
+                                <div class="absolute inset-0 image-overlay"></div>
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[9px] font-bold text-slate-800">
+                                    ${d}.${m}.${y}
+                                </div>
+                                <div class="absolute bottom-4 right-4 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    ${item.price || 'OFERTA'}
+                                </div>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <h4 class="font-bold text-slate-800 mb-2 leading-tight">${item.title}</h4>
+                                <p class="text-slate-400 text-xs mb-6 line-clamp-2 italic leading-relaxed">
+                                    "${item.desc}"
+                                </p>
+                                <div class="mt-auto">
+                                    <a href="${item.link}" target="_blank" class="w-full pink-gradient text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-pink-100 hover:brightness-110 active:scale-95 transition-all">
+                                        Ver Detalles
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                lucide.createIcons();
+
+            } catch (e) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-20 text-center">
+                        <div class="bg-red-50 text-red-500 p-6 rounded-2xl border border-red-100 max-w-sm mx-auto">
+                            <i data-lucide="alert-triangle" class="w-8 h-8 mx-auto mb-2"></i>
+                            <p class="font-bold">Error de Conexión</p>
+                            <p class="text-xs opacity-70">Asegúrate de que db.json está en el repositorio y tiene el formato correcto.</p>
+                        </div>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchCatalog);
+    </script>
+</body>
+</html>
